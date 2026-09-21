@@ -1,0 +1,2 @@
+# slop-ass-ai-repo
+A bunch of slops.
