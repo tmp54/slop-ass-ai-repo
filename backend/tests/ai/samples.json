@@ -1,0 +1,65 @@
+[
+  {
+    "name": "notes_only_vague",
+    "notes": "I did most of the login page. Still need to wire it up. Ask Sam about the API.",
+    "links": [],
+    "llm_output": {
+      "progress": "Most of the login page is built.",
+      "decisions": [],
+      "remaining_tasks": ["Wire up the login page"],
+      "blockers": [],
+      "reference_notes": [],
+      "gaps": ["Which API should the login page call?", "Who is Sam and how to reach them?", "What is left of the login page besides wiring?"]
+    },
+    "expect": {
+      "progress_contains": "login page",
+      "remaining_tasks_contains": ["Wire up"],
+      "min_gaps": 2,
+      "gaps_contain": ["API"],
+      "reference_urls": []
+    }
+  },
+  {
+    "name": "pr_fetched",
+    "notes": "Auth refactor is in PR 12. We chose JWT over sessions. Token refresh is not done.",
+    "links": ["https://github.com/acme/app/pull/12"],
+    "github": {"https://github.com/acme/app/pull/12": {"kind": "pull", "title": "Refactor auth to JWT", "body": "Moves auth to JWT.", "comments": ["bob: refresh flow missing"], "files": ["app/auth.py"]}},
+    "llm_output": {
+      "progress": "Auth was refactored to JWT in PR 12.",
+      "decisions": ["Use JWT instead of sessions"],
+      "remaining_tasks": ["Implement token refresh"],
+      "blockers": [],
+      "reference_notes": [{"url": "https://github.com/acme/app/pull/12", "note": "Auth refactor PR"}],
+      "gaps": ["Why JWT was chosen over sessions is not stated"]
+    },
+    "expect": {
+      "progress_contains": "JWT",
+      "remaining_tasks_contains": ["refresh"],
+      "min_gaps": 1,
+      "gaps_contain": ["JWT"],
+      "reference_urls": ["https://github.com/acme/app/pull/12"],
+      "no_fetch_gap": true
+    }
+  },
+  {
+    "name": "fetch_failed",
+    "notes": "Issue 7 describes the bug I was fixing. Blocked on staging access.",
+    "links": ["https://github.com/acme/private/issues/7"],
+    "github": {},
+    "llm_output": {
+      "progress": "Working on the bug described in issue 7.",
+      "decisions": [],
+      "remaining_tasks": [],
+      "blockers": ["Blocked on staging access"],
+      "reference_notes": [],
+      "gaps": ["Which tasks remain is not stated"]
+    },
+    "expect": {
+      "progress_contains": "issue 7",
+      "blockers_contain": ["staging"],
+      "min_gaps": 2,
+      "gaps_contain": ["content not fetched: https://github.com/acme/private/issues/7"],
+      "reference_urls": ["https://github.com/acme/private/issues/7"]
+    }
+  }
+]
