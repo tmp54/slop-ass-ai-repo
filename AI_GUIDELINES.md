@@ -8,9 +8,9 @@ We will use Claude to draft the first pass of docstrings and API documentation �
 
 AI usage should be documented when it meaningfully contributes to the project.
 
-* Prompt Engineering Log: record important AI interactions whose output is used in the project.
-* `DECISIONS.md`: record cases where AI contributes to a significant design or architectural decision, including the team’s reasoning.
-* Pull Request description: disclose when AI-generated or AI-assisted code is included in the PR.
+* Prompt Engineering Log: record important AI interactions whose output is used in the project. Put the logs under /promptlogs. name it session-NNN.md
+* `DECISIONS.md`: record cases where AI contributes to a significant design or architectural decision, including the team’s reasoning. Every entry must include `Title`, `Context`, `Decision`, `Status`, `Consequence`.
+* Pull Request description: disclose when AI-generated or AI-assisted code is included in the PR. Also, the corresponding prompt logs should be referenced in the PR.
 * Trivial uses, such as syntax explanations or minor debugging help, do not need to be recorded.
 
 ## Resolving Disagreements
